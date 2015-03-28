@@ -1,0 +1,167 @@
+@import url(http://fonts.googleapis.com/css?family=Jura);
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; 
+}
+
+
+#okvir {
+	background-color:black;
+}
+
+#header{
+	background-color: white;
+	height: 80px;
+}
+
+#leftmenu {
+	position:relative;
+	float:left;
+	width: 20%;
+	background-color: #FFFFFF;
+	width: 20%;
+	font-family: 'Jura', sans-serif;
+	font-size: 16pt;
+}
+
+#pagecontent { 
+	position:relative;
+	float: left;
+	width: 80%;
+	background-color:white;
+}
+
+#footer {
+	background-color:white;
+	position: relative;
+	float: left;
+	width: 100%;
+	text-align: center
+}
+
+#header img {
+	float:left;
+	text-align: left;
+	padding-left: 20px;
+	height: 70px;
+	width: 100px;
+}	
+
+.logo {
+	position:relative;
+	float: left;
+	font-family: 'Jura', sans-serif;
+	font-size: 25pt;
+    font-size: 2.5vw;
+	padding-top: 15px;
+}
+
+#search {
+	float: right;
+	padding-right: 15px;
+	padding-top: 20px;
+}
+
+#search input {
+	font-family: 'Jura', sans-serif;
+	font-size: 16pt;
+	border-radius: 5px;
+	height: 30px;
+	width: 250px;
+}
+
+#search label {
+	font-family: 'Jura', sans-serif;
+	font-size: 16pt;
+}
+
+.logo span {
+	color: green;
+}
+
+
+/*levi meni */
+
+#leftmenu ul,
+#leftmenu ul li,
+#leftmenu ul ul {
+  list-style: none;
+}
+
+
+
+#leftmenu ul li {
+  float: left;
+  min-height: 1px;
+  line-height: 1em;
+  vertical-align: middle;
+  position: relative;
+}
+#leftmenu ul li.hover,
+#leftmenu ul li:hover {
+  position: relative;
+  z-index: 599;
+  cursor: default;
+}
+#leftmenu ul ul {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  z-index: 598;
+  width: 100%;
+}
+#leftmenu ul ul li {
+  float: none;
+}
+#leftmenu ul li:hover > ul {
+  visibility: visible;
+}
+#leftmenu ul ul {
+  top: 1px;
+  left: 99%;
+}
+#leftmenu ul li {
+  float: none;
+}
+
+#leftmenu a {
+  display: block;
+  padding: 15px 20px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#leftmenu > ul {
+  width: 100%;
+}
+#leftmenu ul ul {
+  width: 100%;
+}
+#leftmenu > ul > li > a {
+  border-right: 6px solid #89C13C;
+  color: black;
+}
+
+#leftmenu > ul > li a:hover,
+#leftmenu > ul > li:hover a {
+  background: #89C13C;
+}
+#leftmenu > ul > li > ul > li:hover a{
+	background: white;
+}
+#leftmenu li {
+  position: relative;
+}
+#leftmenu ul li.has-sub > a:after {
+  content: '>';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -6px;
+}
+
+
