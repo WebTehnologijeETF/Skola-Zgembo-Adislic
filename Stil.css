@@ -350,3 +350,40 @@ font-family: 'Jura', sans-serif;
 	height: 150px;
 	border-radius: 5px;
 }
+
+/* stranica sa externim linkovima*/
+
+#linkovi {
+	width: 620px;
+	box-shadow: 10px 10px 5px #888888;
+	background-color: #F8F6F6;
+	margin: 0 auto;
+	padding-left: 20px;
+	border-radius: 5px;
+	padding-bottom: 20px;
+}
+
+#linkovi a {
+	text-decoration: none;
+	color: #89C13C;
+	font-size: 17pt;
+}
+
+#linkovi > ul {
+	padding: 30px;
+	padding-left: 100px;
+	list-style: none;
+}
+
+ul  {
+    list-style:none;
+     margin:0; padding:0;
+}
+#linkovi ul li {
+	  margin:0; 
+	  padding:0;
+	  padding-top: 3px;
+	  background:url(Images/bullet.png) no-repeat 0 0;
+	  padding-left:40px; 
+	  min-height:40px; 
+}
