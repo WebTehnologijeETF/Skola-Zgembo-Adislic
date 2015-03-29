@@ -1,15 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="stil.css">
     <title>Kontakt</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <meta charset="utf-8" />
 </head>
 
 <body>
 	<div id="okvir">
 		<div id="header">
-			<img src="logo.png" alt="logo">
+			<img src="Images/logo.png" alt="logo">
 			<label class="logo">Srednja škola <span> Zgembo Adislić</span> </label>
 			<div id="search">
 				<label> Pretraga: </label>
@@ -60,7 +60,40 @@
 			</ul>
 		</div>
 		<div id="pagecontent">
-		<p >ovo je neki text </p>
+			<h2> Kontaktirajte nas </h2>
+			<div id="forma">
+			<form id="contact-form" method="post">
+				<h4>Popunite formu ispod i mi ćemo odgovoriti u roku od 24 časa</h4>
+
+					<div>
+						<label>
+								<div>Ime: (obavezno)</div>
+								<input placeholder="Ime..." type="text" tabindex="1" name="name" required autofocus>
+						</label>
+					</div>
+					<div>
+						<label>
+								<div>Email: (obavezno)</div>
+								<input placeholder="Email..." type="email" tabindex="3" name="email" required>
+						</label>
+					</div>
+					<div>
+						<label>
+								<div>Naslov: (obavezno)</div>
+								<input placeholder="Naslov..." type="text" tabindex="4" name="title" required>
+						</label>
+					</div>
+					<div>
+						<label>
+								<div>Poruka:</div>
+								<textarea tabindex="5" placeholder="Poruka..." required></textarea>
+						</label>
+					</div>
+					<div>
+					<button name="submit" type="submit" id="contact-submit">Pošaljite email</button>
+					</div>
+				</form>
+			</div>
 		</div>
 		<div id="footer">
 		<p >Copyright (c) 2015 Nihad Ahmetović Web tehnologije </p>

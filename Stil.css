@@ -178,6 +178,7 @@
 	padding-top: 30px;
 	padding-bottom: 30px;
 	font-family: 'Jura', sans-serif;
+	font-size: 25pt;
 }
 
 table {
@@ -226,6 +227,7 @@ tbody > tr:hover td{
 	box-shadow: 10px 10px 5px #888888;
 	float: left;
 	margin: 3px;
+	border-radius: 4px;
 }
 .topicallarge:hover {
 	box-shadow: 10px 10px 5px #89C13C;
@@ -233,6 +235,7 @@ tbody > tr:hover td{
 .topicallarge > img {
 	height: 185px;
 	width: 270px;
+	margin-left: 4px;
 }
 
 .topicallarge > h3 {
@@ -265,6 +268,7 @@ font-family: 'Jura', sans-serif;
 	float: left;
 	margin: 3px;
 	overflow: hidden;
+	border-radius: 3px;
 }
 .topicalsmall:hover {
 	box-shadow: 10px 10px 5px #89C13C;
@@ -272,6 +276,7 @@ font-family: 'Jura', sans-serif;
 .topicalsmall > img {
 	height: 70px;
 	width: 110px;
+	margin-left: 2px;
 }
 
 .topicalsmall > h3 {
@@ -292,4 +297,56 @@ font-family: 'Jura', sans-serif;
 	padding-right: 3px;
 	position: relative;
 	top: 0%;
+}
+
+
+/*kontakt forma*/
+
+#forma{
+	height: 510px;
+	width: 620px;
+	box-shadow: 10px 10px 5px #888888;
+	background-color: #F8F6F6;
+	margin: 0 auto;
+	padding-left: 20px;
+	border-radius: 5px;
+}
+
+#pagecontent > form {
+	
+}
+
+#pagecontent > div >form > h4 {
+	padding-top: 20px;
+	text-align: center;
+	font-size: 15pt;
+	margin-bottom: 20px;
+	font-weight: normal;
+	
+}
+
+#pagecontent input {
+	height: 30px;
+	width: 580px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: none;
+	padding-left: 5px;
+}
+#pagecontent button {
+	width: 580px;
+	height: 30px;
+	border-radius: 5px;
+	background-color:#89C13C;
+	color: white;
+	font-weight: bold;
+	font-size: 14pt;
+}
+
+#pagecontent textarea {
+	padding-left: 5px;
+	margin-bottom: 20px;
+	width: 580px;
+	height: 150px;
+	border-radius: 5px;
 }
