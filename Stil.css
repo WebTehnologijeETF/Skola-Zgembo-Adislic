@@ -14,6 +14,7 @@
 #header{
 	background-color: white;
 	height: 80px;
+	border-bottom: solid 1px #89C13C;
 }
 
 #leftmenu {
@@ -24,13 +25,6 @@
 	width: 20%;
 	font-family: 'Jura', sans-serif;
 	font-size: 16pt;
-}
-
-#pagecontent { 
-	position:relative;
-	float: left;
-	width: 80%;
-	background-color:white;
 }
 
 #footer {
@@ -152,6 +146,7 @@
 }
 #leftmenu > ul > li > ul > li:hover a{
 	background: white;
+	border: 1px solid #89C13C;
 }
 #leftmenu li {
   position: relative;
@@ -165,3 +160,136 @@
 }
 
 
+/* tabela */
+
+#pagecontent { 
+	position:relative;
+	float: left;
+	width: 80%;
+	background-color:white;
+	padding-left: 30px;
+	padding-top: 20px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+}
+
+#pagecontent h2 {
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-family: 'Jura', sans-serif;
+}
+
+table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0px;
+}
+
+tr td {
+	border-collapse: collapse;
+	border: 0px;
+}
+
+th {
+	height: 70px;
+	background-color: #3E7E3E;
+	color: white;
+	font-size: 16pt;
+}
+td {
+	text-align: center;
+	height: 30px;
+}
+
+tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+.topleft {
+	border-top-left-radius: 30px;
+}
+
+tbody > tr:hover td{
+	background-color: #DDDDDD;
+}
+
+
+.topicallarge {
+	background: #F8F6F6;
+	height: 230px;
+	width: 503px;
+	box-shadow: 10px 10px 5px #888888;
+	float: left;
+	margin: 3px;
+}
+.topicallarge:hover {
+	box-shadow: 10px 10px 5px #89C13C;
+}
+.topicallarge > img {
+	height: 185px;
+	width: 270px;
+}
+
+.topicallarge > h3 {
+font-family: 'Jura', sans-serif;	
+	text-align: center;
+	padding-bottom: 2px;
+	
+}
+
+.topicallarge > a {
+	float: right;
+	text-decoration: none;
+}
+
+.topicallarge > p {
+	float: right;
+	width: 210px;
+	padding-right: 3px;
+	position: relative;
+	top: 0%;
+}
+
+/*manji*/
+
+.topicalsmall {
+	background: #F8F6F6;
+	height: 112px;
+	width: 248px;
+	box-shadow: 10px 10px 5px #888888;
+	float: left;
+	margin: 3px;
+	overflow: hidden;
+}
+.topicalsmall:hover {
+	box-shadow: 10px 10px 5px #89C13C;
+}
+.topicalsmall > img {
+	height: 70px;
+	width: 110px;
+}
+
+.topicalsmall > h3 {
+font-family: 'Jura', sans-serif;	
+	text-align: center;
+	padding-bottom: 2px;
+	
+}
+
+.topicalsmall > a {
+	float: right;
+	text-decoration: none;
+}
+
+.topicalsmall > p {
+	float: right;
+	width: 120px;
+	padding-right: 3px;
+	position: relative;
+	top: 0%;
+}
