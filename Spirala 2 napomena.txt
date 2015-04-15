@@ -1,0 +1,3 @@
+forma sa validacijom je uradjena na stranici Registracija roditelja 
+
+dok je padajuci meni uradjen koristenjem CSS-a na prethodnoj spirali (left menu raspored matura ekskurzija....)
