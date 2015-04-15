@@ -121,7 +121,7 @@ function submitFunction() {
 	if(!validateWholeForm()) return false;
 	var ok = window.confirm("Vas zahtjev je spreman pritisnite ok da biste poslali!");
 	if(ok) {
-		location.reload();
+		
 	}
 	else {
 		return false;
