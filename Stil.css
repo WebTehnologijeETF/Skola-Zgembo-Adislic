@@ -303,7 +303,6 @@ font-family: 'Jura', sans-serif;
 /*kontakt forma*/
 
 #forma{
-	height: 510px;
 	width: 620px;
 	box-shadow: 10px 10px 5px #888888;
 	background-color: #F8F6F6;
@@ -341,6 +340,7 @@ font-family: 'Jura', sans-serif;
 	color: white;
 	font-weight: bold;
 	font-size: 14pt;
+	margin-bottom: 10px;
 }
 
 #pagecontent textarea {
@@ -386,4 +386,19 @@ ul  {
 	  background:url(Images/bullet.png) no-repeat 0 0;
 	  padding-left:40px; 
 	  min-height:40px; 
+}
+
+
+/*spirala 2*/
+
+/*forma sa validacijom */
+
+.skriven {
+	display:none;
+}
+
+.prikaziGresku {
+	display:block;
+	color: red;
+	font-weight: bold;
 }
