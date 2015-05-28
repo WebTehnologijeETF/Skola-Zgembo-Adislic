@@ -4,7 +4,7 @@
 		$pass = mysql_escape_string($_POST['password']);
 	}
 	
-     $veza = new PDO("mysql:dbname=wt8;host=localhost;charset=utf8", "adminbaZigZn", "wt8pass");
+     $veza = new PDO("mysql:dbname=test123;host=localhost:8081;charset=utf8", "root", "");
      $veza->exec("set names utf8");
 	 $pass = md5($pass);
      $rezultat = $veza->query("select * from 'User' where 'username' = '".$username."' AND 'pass' = '".$pass."'");
