@@ -1,3 +1,6 @@
+<?php
+	include = 'leftmenu.php';
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,50 +20,9 @@
 			</div>
 		</div>
 		<div id="leftmenu">
-			<ul>
-			   <li><a href='Index.html'><span>Naslovnica</span></a></li>
-			   <li class='has-sub'><a href='#'><span>Raspored</span></a>
-				  <ul>
-					 <li><a href='RasporedI.html'><span>Raspored I razred</span></a>
-					 </li>
-					 <li><a href='RasporedII.html'><span>Raspored II razred</span></a>
-					 </li>
-					 <li><a href='RasporedIII.html'><span>Raspored III razred</span></a>
-					 </li>
-					 <li><a href='RasporedIV.html'><span>Raspored IV razred</span></a>
-					 </li>
-				  </ul>
-			   </li>
-			   <li class='has-sub'><a href='#'><span>Matura</span></a>
-				  <ul>
-					 <li><a href='#'><span>2014</span></a>
-					 </li>
-					 <li><a href='#'><span>2015</span></a>
-					 </li>
-					 <li><a href='#'><span>2013</span></a>
-					 </li>
-					 <li><a href='#'><span>2012</span></a>
-					 </li>
-				  </ul>
-			   </li>
-			   <li class='has-sub'><a href='#'><span>Eksurzija</span></a>
-				  <ul>
-					 <li><a href='#'><span>2014</span></a>
-					 </li>
-					 <li><a href='#'><span>2013</span></a>
-					 </li>
-					 <li><a href='#'><span>2012</span></a>
-					 </li>
-					 <li><a href='#'><span>2011</span></a>
-					 </li>
-				  </ul>
-			   </li>
-			   <li><a href='Partneri.html'><span>Partneri</span></a></li>
-			   <li><a href='ONama.html'><span>O Nama</span></a></li>
-			   <li><a href='Kontakt.html'><span>Kontakt</span></a></li>
-			   <li><a href='Upit za ocene.html'><span>Upit za ocene</span></a></li>
-			   <li><a href='Registracija roditelja.html'><span>Registracija roditelja</span></a></li>
-			</ul>
+			<?php
+			RenderLeftMenu();
+			?>
 		</div>
 		<div id="pagecontent">
 		<h2> O nama </h2>
