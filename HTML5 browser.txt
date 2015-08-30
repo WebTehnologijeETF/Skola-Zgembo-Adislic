@@ -1,1 +1,0 @@
-HTML5 kontrole korištene na kontakt formi su u potpunosti podržane u Mozilla firefox a odredjene kontrole rade i u drugim browserima
