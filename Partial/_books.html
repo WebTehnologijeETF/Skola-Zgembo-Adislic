@@ -1,0 +1,66 @@
+<h2> Knjige </h2>
+<div id="forma">
+	<h4>Unesite podatke o knjizi</h4>
+	<div class="quiz">
+		<div>
+			<label class="capitalcity">
+					<span>Naslov: </span>
+					<input placeholder="Naslov..." type="text" tabindex="1" id="titleId" onblur="validateTitle('add')">
+			</label>
+		</div>
+		<div>
+			<label class="capitalcity">
+					<span>Opis: </span>
+					<input placeholder="Opis..." type="text" tabindex="1" id="descriptionId">
+			</label>
+		</div>
+		<div>
+			<label class="capitalcity">
+					<span>Cijena: </span>
+					<input placeholder="Cijena..." type="text" tabindex="1" id="priceId" onblur="validatePrice('add')">
+			</label>
+		</div>
+		<div>
+			<button id="startnext" onclick="addBook()">Dodaj Knjigu</button>
+		</div>
+	</div>
+</div>
+<table id="booksTable">
+<thead>
+	<tr>
+		<th class="topleft"> Naslov </th>
+		<th> Opis </th>
+		<th> Cijena </th>
+		<th> Akcija </th>
+	</tr>
+</thead>
+<tbody id="booksTableTbody">
+
+</tbody>
+</table>
+<div id="editDialog">
+	<div>
+		<div>
+		  <span class="editLabel">
+		  	Naslov: 
+		  </span>
+		  <input id="editTitle" placeholder="Naslov..." type="text" onblur="validateTitle('edit')">
+	    </div>
+	    <div>
+		  <span class="editLabel">
+		  	Opis: 
+		  </span>
+		  <input id="editDescription" placeholder="Opis..." type="text">
+	    </div>
+	    <div>
+		  <span class="editLabel">
+		  	Cijena: 
+		  </span>
+		  <input id="editPrice" placeholder="Cijena..." type="text" onblur="validatePrice('edit')">
+	    </div>
+	    <div>
+	    	<input class="editdBookButton" type="button" value="Izmjeni" onclick="editBook()">
+	    	<input class="cancelEditdBookButton" type="button" value="Odustani" onclick="cancelEditDialog()">
+		</div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<h2> Provjerite da li ste ispravno popunili kontakt formu </h2>
+<div id="forma">
+	<div class="form readonly">
+		<div> Ime: </div>
+		<div> Email:</div>
+		<div> Naslov: </div>
+		<div> Poruka:</div>
+		<h4> Da li ste sigurni da želite poslati ove podatke? </h4> 
+		<div><button name="cancel" onclick="IAgree()">Siguran sam</button></div>
+		<h4> Ako ste pogrešno popunili formu, možete ispod prepraviti unesene podatke </h4>
+		<div class="formCheckAndCorrect">
+			<div>
+			<label>
+					<span>Ime:</span> <span class="error-hidden">ime mora biti duze od dva karaktera</span>
+					<input id="contactName" placeholder="Ime..." type="text" tabindex="1" name="firstName" autofocus onblur="validateName(event)">
+			</label>
+			</div>
+			<div>
+				<label>
+						<span>Email:</span> <span class="error-hidden">email nije validan</span>
+						<input id="contactMail" placeholder="Email..." type="email" tabindex="3" name="email" onblur="validateEmail()">
+				</label>
+			</div>
+			<div>
+				<label>
+						<span>Naslov:</span> <span class="error-hidden">naslov nije validan</span>
+						<input id="contactSubject" placeholder="Naslov..." type="text" tabindex="4" name="title" onblur="validateSubject()">
+				</label>
+			</div>
+			<div>
+				<label>
+						<span>Poruka:</span> <span class="error-hidden">poruka nije validna</span>
+						<textarea id="contactMessage" tabindex="5" onblur="validateMessage()"></textarea>
+				</label>
+			</div>
+			<div>
+			<button class="cancelEmail" name="cancel" id="contact-cancel" onclick="cancelSendEmail()">Odustani</button>
+			<button class="sendEmail" name="submit" id="contact-submit" onclick="sendEmail()">Pošaljite email</button>
+		</div>
+		</div>
+	</div>
+</div>

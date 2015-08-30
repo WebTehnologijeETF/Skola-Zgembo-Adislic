@@ -1,0 +1,82 @@
+<h2> Novosti</h2>
+<div id="forma">
+<div id="adduserform" class="form">
+	<h4>Unesite podatke o novosti</h4>
+
+		<div>
+			<label>
+					<span>Naslov:</span>
+					<input placeholder="Naslov..." type="text" id="headerId">
+			</label>
+		</div>
+		<div>
+			<label>
+					<span>Slika:</span> 
+					<input placeholder="Slika..." type="text" id="image">
+			</label>
+		</div>
+		<div>
+			<label>
+					<span>Text:</span>
+					<textarea id="text"></textarea>
+			</label>
+		</div>
+		<div>
+			<label>
+					<span>Detaljniji text:</span>
+					<textarea id="moretext"></textarea>
+			</label>
+		</div>
+		<div>
+			<button name="submit" id="adduser-submit" onclick="addNews()">Dodajte korisnika</button>
+		</div>
+	</div>
+</div>
+
+<table id="booksTable">
+<thead>
+	<tr>
+		<th class="topleft"> Naslov </th>
+		<th> Slika </th>
+		<th> Text </th>
+		<th> Detaljnije </th>
+		<th> Akcija </th>
+	</tr>
+</thead>
+<tbody id="booksTableTbody">
+
+</tbody>
+
+<div id="editDialog">
+	<div class="editNewsDialog">
+		<div>
+		  <input type="text" id="newsId" hidden>
+		  <span class="editLabel">
+		  	Naslov: 
+		  </span>
+		  <input id="editHeader" placeholder="Ime..." type="text">
+	    </div>
+	    <div>
+		  <span class="editLabel">
+		  	Slika: 
+		  </span>
+		  <input id="editImage" placeholder="Prezime..." type="url" >
+	    </div>
+	    <div>
+		  <span class="editLabel">
+		  	Text: 
+		  </span>
+		  <textarea id="editText"> </textarea>
+	    </div>
+	    <div>
+		  <span class="editLabel">
+		  	Detaljnije: 
+		  </span>
+		  <textarea id="editMoreText" > </textarea>
+	    </div>
+	    <div>
+	    	<input class="editdBookButton" type="button" value="Izmjeni" onclick="editNews()">
+	    	<input class="cancelEditdBookButton" type="button" value="Odustani" onclick="cancelEditDialog()">
+		</div>
+    </div>
+</div>
