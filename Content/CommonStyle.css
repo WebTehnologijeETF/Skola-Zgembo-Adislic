@@ -33,6 +33,7 @@
 	padding-top: 20px;
 	padding-right: 30px;
 	padding-bottom: 30px;
+	position: relative;
 }
 
 #pagecontent h2 {
@@ -79,6 +80,10 @@
 	float: right;
 	padding-right: 15px;
 	padding-top: 20px;
+	border-right:  4px solid #89C13C;
+	padding-bottom: 30px;
+	position: relative;
+	right: -127px;
 }
 
 #search input {
@@ -101,7 +106,10 @@
 
 #leftmenu ul,
 #leftmenu ul li,
-#leftmenu ul ul {
+#leftmenu ul ul,
+#settings-menu ul,
+#settings-menu ul li,
+#settings-menu ul ul {
   list-style: none;
 }
 
@@ -126,7 +134,7 @@
   z-index: 598;
   width: 100%;
 }
-#leftmenu ul ul li {
+#leftmenu ul ul li{
   float: none;
 }
 #leftmenu ul li:hover > ul {
@@ -136,7 +144,7 @@
   top: 1px;
   left: 99%;
 }
-#leftmenu ul li {
+#leftmenu ul li{
   float: none;
 }
 
@@ -399,3 +407,99 @@ ul  {
 }
 
 /**endregion news*/
+
+/*druga spirala*/
+
+/*#region error*/
+
+.input-error {
+	background: url(error.png) no-repeat scroll 550px 1px;
+	background-size: 28px 27px;
+	background-color: #FFFFFF;
+	border: 1px ;
+}
+
+.error-text {
+	visibility: visible;
+	color: red;
+}
+
+.error-hidden {
+	visibility: hidden;
+}
+
+/*end of region*/
+
+/*#region dropdown menuj*/
+
+#settings {
+	content :url(settings.png);
+	width: 50px;
+	height: 50px;
+	float: right;
+	margin-top:14px;
+	margin-left:37px;
+	margin-right:36px; 
+	position: relative;
+	right: -137px;
+}
+
+#settings:hover {
+	cursor: pointer;
+}
+
+#settings-menu {
+	visibility: hidden;
+	width:150px;
+	z-index: 600;
+	margin-top: 5px;
+	position: relative;
+	float: right;
+	top:71px;
+	line-height: 40px;
+	font-family: 'Jura', sans-serif;
+	font-size: 12pt;
+	z-index: 1000;
+	color: #000000;
+}
+
+#settings-menu a{
+	text-decoration: none;
+	padding-left: 20px;
+}
+
+#settings-menu ul {
+	position: absolute;
+	background-color: #89C13C; 
+	width: 150px;
+	border-bottom-right-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+#settings-menu  ul:last-child {
+	padding-bottom: 18px;
+}
+
+#settings-menu ul:first-child {
+	padding-top: 18px;
+}
+
+.sub-settings-menu {
+	visibility: hidden;
+	right: 150px;
+	top:58px;
+}
+.sub-settings-menu li {
+	margin-left: 1px;
+}
+#settings-menu ul li a, #settings-menu ul li ul li a {
+	color: #000000;
+}
+#settings-menu ul li a:visited, #settings-menu ul li a:hover,
+#settings-menu ul li a:focus, #settings-menu ul li a:active,
+#settings-menu ul li ul li a:visited, #settings-menu ul li ul li a:hover,
+#settings-menu ul li ul li a:focus, #settings-menu ul li ul li a:active {
+	text-decoration: none;
+}
+
+ /**endregion dropdown menu*/
