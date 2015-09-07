@@ -1,0 +1,40 @@
+<h2> Kontaktirajte nas </h2>
+<div id="forma">
+<form id="adduserform" method="post" action="addUser">
+	<h4>Popunite podatke o korisniku</h4>
+
+		<div>
+			<label>
+					<span>Ime:</span> <span class="error-hidden">ime mora biti duze od dva karaktera</span>
+					<input placeholder="Ime..." type="text" tabindex="1" name="firstName" autofocus onblur="validateName(event)">
+			</label>
+		</div>
+		<div>
+			<label>
+					<span>Prezime:</span> <span class="error-hidden">prezime mora biti duze od dva karaktera</span>
+					<input placeholder="Prezime..." type="text" tabindex="1" name="lastName" onblur="validateName(event)">
+			</label>
+		</div>
+		<div>
+			<label>
+					<span>Email:</span> <span class="error-hidden">email nije validan</span>
+					<input placeholder="Email..." type="email" tabindex="3" name="email" onblur="validateEmail()">
+			</label>
+		</div>
+		<div>
+			<label>
+					<span>Sifra:</span> <span class="error-hidden">sifra mora biti duza od sest karaktera</span>
+					<input placeholder="Sifra..." type="password" tabindex="3" name="pass" onblur="validatePass()">
+			</label>
+		</div>
+		<div>
+			<label>
+					<span>Potvrdite Sifru:</span> <span class="error-hidden">sifre se ne poklapaju</span>
+					<input placeholder="Potvrdite Sifru..." type="password" tabindex="3" name="confirmPass" onblur="validateConfirmPass()">
+			</label>
+		</div>
+		<div>
+		<button name="submit" type="submit" id="adduser-submit" onclick="return submitAddUser()">Pošaljite poruku</button>
+		</div>
+	</form>
+</div>

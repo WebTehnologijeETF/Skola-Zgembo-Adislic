@@ -86,3 +86,4 @@ var onClickOutsideSettings = function(event) {
 		document.getElementById("settings-menu").children[0].style.visibility = "visible";
 	}
 }
+

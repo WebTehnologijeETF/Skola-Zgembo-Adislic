@@ -68,7 +68,6 @@
 	float: left;
 	font-family: 'Jura', sans-serif;
 	font-size: 25pt;
-    font-size: 2.5vw;
 	padding-top: 15px;
 }
 
@@ -91,7 +90,7 @@
 	font-size: 16pt;
 	border-radius: 5px;
 	height: 30px;
-	width: 250px;
+	width: 150px;
 }
 
 #search label {
@@ -503,3 +502,194 @@ ul  {
 }
 
  /**endregion dropdown menu*/
+
+ /*#region quiz*/
+.score {
+	float: left;
+	margin-bottom: 15px;
+}
+
+.time {
+	float: left;
+	margin-left: 395px;
+	margin-bottom: 15px;
+}
+
+.quiz div {
+	margin-bottom: 20px;
+	font-size: 14pt;
+}
+
+#forma h4 {
+	text-align: center;
+	padding: 27px;
+	font-family:'Jura', sans-serif;
+	font-size: 18pt;
+}
+
+.quiz div #capitalcityid {
+	width: 473px;
+}
+
+.quiz {
+	font-family:'Jura', sans-serif;
+}
+
+.health {
+	float: right;
+	margin-right: 27px;
+}
+
+.health img{
+	width: 20px;
+	height: 20px;
+}
+
+.capitalcity {
+	float: left;
+}
+
+
+#dialog {
+	font-family:'Jura', sans-serif;
+     visibility: hidden;
+     position: fixed;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+     font-size: 15pt;
+}
+
+#dialog > div {
+     width:300px;
+     margin: 100px auto;
+     padding:15px;
+     background-color: #ffffff;
+     text-align:center;
+     height: 140px;
+     border-radius: 7px;
+}
+#dialog::after {
+	  content: "";
+	  background: url(backdrop.png);
+	  opacity: 0.5;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  right: 0;
+	  position: fixed;
+	  z-index: -1;   
+ }
+
+ #dialog div p {
+ 	float: left;
+ 	margin-bottom: 15px;
+ }
+ #dialog div h4 {
+ 	margin-bottom: 15px;
+ }
+
+ #scoreDialog {
+ 	margin-left: 140px;
+ }
+
+ #cancelDialog {
+ 	background-color: #89C13C !important; 
+ 	height: 30px !important;
+ 	width: 80px !important;
+ }
+
+ #dialog > div > div {
+ 	margin: 0 auto;
+
+ }
+ /*#enregion quiz*/
+
+/*#region books*/
+ td img {
+ 	width: 30px;
+ 	height: 30px;
+ 	margin-left: 10px;
+ 	cursor: pointer;
+ 	margin-top: 2px;
+ 	margin-bottom: 2px;
+ }
+
+ #editDialog {
+	font-family:'Jura', sans-serif;
+     visibility: hidden;
+     position: fixed;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+     font-size: 15pt;
+}
+
+#editDialog > div {
+     width:600px;
+     margin: 100px auto;
+     padding:15px;
+     background-color: #ffffff;
+     text-align:center;
+     height: 250px;
+     border-radius: 7px;
+}
+#editDialog::after {
+	  content: "";
+	  background: url(backdrop.png);
+	  opacity: 0.5;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  right: 0;
+	  position: fixed;
+	  z-index: -1;   
+ }
+
+#editDialog  div div {
+	float: left;
+	width: 580px;
+}
+
+.editLabel {
+	float: left;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+#editDialog  div div input {
+	border: 1px solid #888888;
+	width:420px;
+	margin-right: 20px;
+	float: right;
+}
+#editDialog div:first-child {
+	margin-top: 15px;
+}
+
+.editdBookButton,
+.cancelEditdBookButton {
+	width: 100px !important;
+	height: 30px !important;
+	font-family:'Jura', sans-serif !important;
+	font-weight: bold;
+	color: #fff !important;
+	border: none !important;
+}
+
+.editdBookButton  {
+	margin-left: 20px;
+	background-color: #89C13C;
+}
+
+.cancelEditdBookButton {
+	background-color: #888888;
+}
+
+/*#endregion books*/

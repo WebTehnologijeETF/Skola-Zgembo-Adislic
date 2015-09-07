@@ -1,10 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="Content/CommonStyle.css">
     <script type="text/javascript" src="Scripts/mainScript.js"></script>
-    <title>Naslovnica</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <title>Zgembo</title>
+    <meta charset="UTF-8">
 </head>
 
 <body  onclick="onClickOutsideSettings(event)">
@@ -38,104 +38,38 @@
 		</div>
 		<div id="leftmenu">
 			<ul>
-			   <li><a href="index.html"><span>Naslovnica</span></a></li>
+			   <li><a onclick="ajaxLoad('index')"><span>Naslovnica</span></a></li>
 			   <li class="has-sub"><a href="#"><span>Raspored</span></a>
 				  <ul>
-					 <li><a href="timetableI.html"><span>Raspored I razred</span></a>
+					 <li><a onclick="ajaxLoad('timetable1')"><span>Raspored I razred</span></a>
 					 </li>
-					 <li><a href="timetableII.html"><span>Raspored II razred</span></a>
+					 <li><a onclick="ajaxLoad('timetable2')"><span>Raspored II razred</span></a>
 					 </li>
-					 <li><a href="timetableIII.html"><span>Raspored III razred</span></a>
+					 <li><a onclick="ajaxLoad('timetable3')"><span>Raspored III razred</span></a>
 					 </li>
-					 <li><a href="timetableIV.html"><span>Raspored IV razred</span></a>
+					 <li><a onclick="ajaxLoad('timetable4')"><span>Raspored IV razred</span></a>
 					 </li>
 				  </ul>
 			   </li>
-			   <li><a href="partners.html"><span>Partneri</span></a></li>
-			   <li><a href="aboutus.html"><span>O Nama</span></a></li>
-			   <li><a href="contact.html"><span>Kontakt</span></a></li>
-			   <li><a href="adduser.html"><span>Dodaj korisnika</span></a></li>
+			   <li><a onclick="ajaxLoad('partners')"><span>Partneri</span></a></li>
+			   <li><a onclick="ajaxLoad('aboutus')"><span>O Nama</span></a></li>
+			   <li><a onclick="ajaxLoad('contact')"><span>Kontakt</span></a></li>
+			   <li><a onclick="ajaxLoad('adduser')"><span>Dodaj korisnika</span></a></li>
+			   <li><a onclick="ajaxLoad('quiz')"><span>Igra gradovi</span></a></li>
+			   <li><a onclick="ajaxLoad('books')"><span>Knjige</span></a></li>
 			</ul>
 		</div>
 		<div id="pagecontent">
-			<h2> Aktuelno </h2>
-			<div class="news-xl news-l news">
-				<!--first news-->
-				<div class="news-container">
-					<div class="news-header">
-						 Raspored polaganja popravnih ispita 
-					</div>
-					<div class="news-content"> 
-						<img src="Images/1.jpg" alt="1">
-						<p>Obavještavaju se učenici Druge gimnazije Sarajevo koji su upućeni na polaganje popravnih ispita u školskoj 2014/2015. godini da će ispite polagati u utorak i srijedu, 25. i 26. augusta 2015. godine, prema rasporedu koji se može pronaći u prilogu ispod. Svi učenici koji polažu popravne ispite dužni su prijaviti iste u ponedjeljak, 24. augusta 2015. godine, u terminu od 11:00 do 12:00 sati kod svojih razrednika.</p>
-					</div>
-					<div class="news-footer">
-						<span class="news-date">31.07.2015 15:44</span>
-						<a class="news-more" href="#">Detaljnije...</a>
-					</div>
-				</div>
-				<!--second news-->
-				<div class="news-container">
-					<div class="news-header">
-						 Konacne rang liste za upis u prvi razred 
-					</div>
-					<div class="news-content"> 
-						<img src="Images/2.jpg" alt="2">
-						<p>U skladu s odredbom člana 2. stav 6. Kriterija za prijem učenika u prvi razred srednjih škola na području Kantona Sarajevo, Školski odbor Druge gimnazije Sarajevo objavljuje konačne rang-liste za prijem učenika u prvi razred opće gimnazije i prvi razred International Baccalaureate Middle Years Programa, koje možete pronaći u prilogu ispod. Konačne rang-liste su formirane na osnovu upisnih kvota navedenih u Konkursu za upis učenika u prvi razred srednjih škola Kantona Sarajevo za školsku 2015/2016. godinu, koji je objavilo Ministarstvo za obrazovanje, nauku i mlade Kantona Sarajevo 23. juna 2015. godine, kao i Saglasnosti za dodatni upis 16 učenika u prvi razred IB Middle Years Programa (također u prilogu). Dakle, prema konačnim rang-listama pravo upisa u opću gimnaziju steklo je 100 prvorangiranih učenika (zaključno sa Edinom Huseinbegovićom), dok je pravo upisa u IB Middle Years Program steklo 56 prvorangiranih učenika (zaključno sa Enom Isen)</p>
-					</div>
-					<div class="news-footer">
-						<span class="news-date">31.07.2015 15:44</span>
-						<a class="news-more" href="#">Detaljnije...</a>
-					</div>
-				</div>
-				<!--third news-->
-				<div class="news-container">
-					<div class="news-header">
-						 Preliminarne rang-liste za upis u prvi razred
-					</div>
-					<div class="news-content"> 
-						<img src="Images/3.jpg" alt="3">
-						<p>U skladu s odredbom člana 2. stav 3. Kriterija za prijem učenika u prvi razred srednjih škola na području Kantona Sarajevo, direktorica Druge gimnazije Sarajevo objavljuje preliminarne rang-liste za prijem učenika u prvi razred opće gimnazije i prvi razred International Baccalaureate Middle Years Programa, koje možete pronaći u prilogu ispod. Preliminarne rang-liste su formirane na osnovu upisnih kvota navedenih u Konkursu za upis učenika u prvi razred srednjih škola Kantona Sarajevo za školsku 2015/2016. godinu, koji je objavilo Ministarstvo za obrazovanje, nauku i mlade Kantona Sarajevo 23. juna 2015. godine. Kandidate koji se na preliminarnoj rang-listi za upis u IB Middle Years Program nalaze od 41. do 60. mjesta obavještavamo da je Druga gimnazija Sarajevo nadležnom ministarstvu, odnosno Vladi Kantona Sarajevo, 29. juna 2015. godine podnijela zahtjev za formiranje trećeg odjeljenja IB Middle Years Programa, čime bi upisna kvota za ovaj program bila povećana sa 40 na 60 učenika. Stoga se na interview, koji je sastavni dio upisne procedure u ovaj međunarodni program, poziva 60 prvorangiranih učenika, u terminima koje možete pronaći u prilogu. Škola će obavijest o odgovoru Vlade KS na zahtjev o formiranju trećeg odjeljenja IB Middle Years Programa objaviti čim ga bude dobila u pisanoj formi. Kandidati rangirani od 41. do 60. mjesta će moći biti upisani jedino uz odobrenje Vlade KS o formiranju trećeg odjeljenja ovog programa. Na preliminarne rang-liste dopušten je prigovor roditelja-staratelja. Prigovori se mogu podnijeti u pisanoj formi u petak, 3. jula, od 10 do 12 sati u prostorijama Sekretarijata škole.</p>
-					</div>
-					<div class="news-footer">
-						<span class="news-date">31.07.2015 15:44</span>
-						<a class="news-more" href="#">Detaljnije...</a>
-					</div>
-				</div>
-				<!--fourth news-->
-				<div class="news-container">
-					<div class="news-header">
-						 Zavrsen upis IB diploma programa (III razred)
-					</div>
-					<div class="news-content"> 
-						<img src="Images/4.jpg" alt="4">
-						<p>Obavještavaju se svi učenici koji su se prijavili za upis u IB Diploma Program (treći i četvrti razred srednje škole), da su nakon provedenih intervjua i prijemnog ispita iz matematike svi prijavljeni kandidati zadovoljili uslove za prijem u IB Diploma Program. Spisak odjeljenja će biti objavljen najkasnije krajem augusta 2015. godine. We hereby notify all students who have applied to attend the IB Diploma Program that after conducting interview and the math entrance exam, we have established that all the candidates have met the requirements to be enrolled in the IB Diploma Program. The list of classes shall be announced not later than end of August 2015</p>
-					</div>
-					<div class="news-footer">
-						<span class="news-date">31.07.2015 15:44</span>
-						<a class="news-more" href="#">Detaljnije...</a>
-					</div>
-				</div>
-				<!--fourth news-->
-				<div class="news-container">
-					<div class="news-header">
-						 Konkurs za upis u prvi razred srednjih skola 
- 					</div>
-					<div class="news-content"> 
-						<img src="Images/4.jpg" alt="5">
-						<p>Ministarstvo za obrazovanje, nauku i mlade Kantona Sarajevo objavilo je Konkurs za upis učenika u prvi razred srednjih škola Kantona Sarajevo za školsku 2015/2016. godinu. Tekst Konkursa koji je u cijelosti preuzet sa zvanične web stranice spomenutog ministarstva možete pronaći u prilogu ispod. Prema Konkursu, u Drugoj gimnaziji Sarajevo je predviđen upis 100 učenika u četiri odjeljenja u opću gimnaziju (prema nastavnom planu i programu Kantona Sarajevo) i 40 učenika u dva odjeljenja u International Baccalaureate Middle Years Program. Učenici koji apliciraju za upis u IB Middle Years Program će putem web stranice škole po objavljivanju zvanične preliminarne rang-liste, odnosno po zatvaranju Konkursa, biti obaviješteni o terminu održavanja interviewa za upis u ovaj program, koji je sastavni dio upisne procedure tako da je odaziv učenika koji prema rang-listi budu pozvani na interview obavezan! Konkurs je otvoren od 23. juna do 2. jula, a prijem dokumentacije u Drugoj gimnaziji Sarajevo vršit će se u prostorijama škole svakim radnim danom od 09:00 do 12:00 sati. Sve aplikante molimo da dokumentaciju koja nije relevantna za upis, tj. nije predviđena Konkursom, ne dostavljaju. Pored Konkursa, u prilogu ćete pronaći i zahtjev za upis (obrazac SŠ 10) i anketni list za odabir izborno-obaveznih predmeta (Kultura religija i Vjeronauka/Vjeronauk) koji su sastavni dio upisne dokumentacije. Učenici koji apliciraju za upis u opću gimnaziju mogu se opredijeliti i za pohađanje nastave intenzivnog njemačkog jezika (za učenike sa naprednim nivoom znanja njemačkog jezika). Intenzivni njemački jezik nije u ponudi za učenike IB Middle Years Programa.</p>
-					</div>
-					<div class="news-footer">
-						<span class="news-date">31.07.2015 15:44</span>
-						<a class="news-more" href="#">Detaljnije...</a>
-					</div>
-				</div>
-			</div>
+			<!---partial load-->
 		</div>
 		<div id="footer">
 		<p >Copyright (c) 2015 Nihad Ahmetović Web tehnologije </p>
 		</div>
 	</div>
+	
+	<script type="text/javascript" src="Scripts/book.js"></script>
+	<script type="text/javascript" src="Scripts/quiz.js"></script>
+	<script type="text/javascript" src="Scripts/singlePageScript.js"></script>
 	<script type="text/javascript" src="Scripts/dropDownScript.js"></script>
 </body>
 </html>
