@@ -1,7 +1,3 @@
-(function () {
-	getAllNews();
-})();
-
 var ajaxFunctionPartialLoads = function (url) {
     var xmlhttp;
     if (window.XMLHttpRequest) {
@@ -23,59 +19,73 @@ var ajaxFunctionPartialLoads = function (url) {
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
+//register onhashchange
 
+var changeWindowHash = function (hash) {
+	window.location.hash = hash;
+}
 
+var intervalId;
 
-var ajaxLoad = function(nameOfPage) {
-	switch(nameOfPage) {
-		case "index":
+var ajaxLoad = function(hash, doNotCash) {
+	stopRefresh();
+	hash = !doNotCash ? window.location.hash : hash;
+	switch(hash) {
+		case "#index":
 			getAllNews();
+			periodiclyRefreshIndex();
 			break;
-		case "timetable1":
+		case "#timetable1":
 			ajaxFunctionPartialLoads("Partial/_timetableI.html");
 			break;
-		case "timetable2":
+		case "#timetable2":
 			ajaxFunctionPartialLoads("Partial/_timetableII.html");
 			break;
-		case "timetable3":
+		case "#timetable3":
 			ajaxFunctionPartialLoads("Partial/_timetableIII.html");
 			break;
-		case "timetable4":
+		case "#timetable4":
 			ajaxFunctionPartialLoads("Partial/_timetableIV.html");
 			break;
-		case "partners":
+		case "#partners":
 			ajaxFunctionPartialLoads("Partial/_partners.html");
 			break;
-		case "aboutus":
+		case "#aboutus":
 			ajaxFunctionPartialLoads("Partial/_aboutus.html");
 			break;
-		case "contact":
+		case "#contact":
 			ajaxFunctionPartialLoads("Partial/_contact.html");
 			break;
-		case "adduser":
+		case "#adduser":
 			ajaxFunctionPartialLoads("Partial/_adduser.html");
 			getAllUsers();
 			break;
-		case "quiz":
+		case "#quiz":
 			ajaxFunctionPartialLoads("Partial/_quiz.html");
 			loadStates();
 			break;
-		case "books": 
+		case "#books": 
 			ajaxFunctionPartialLoads("Partial/_books.html");
 			getAllBooks();
 			break;
-		case "login":
+		case "#login":
 			ajaxFunctionPartialLoads("Partial/_login.html");
 			break;
-		case "novosti":
+		case "#novosti":
 			ajaxFunctionPartialLoads("Partial/_news.html");
 			getAllNewsAdmin();
 			break;
-		case "comments": 
+		case "#comments": 
 			ajaxFunctionPartialLoads("Partial/_commentsAdmin.html");
 			getAllNewsHeaders();
 			break;
+		default:
+			if(hash.indexOf("#more") > -1) 
+				clickOnMoreLink(hash.substring(5));
+				periodiclyRefreshMore();
+			break;
 	}
 } 
+window.onhashchange = ajaxLoad;
 
-
+changeWindowHash("#index");

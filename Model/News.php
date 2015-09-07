@@ -7,6 +7,7 @@
 		public $time = "time";
 		public $author = "author";
 		public $more = "more";
+		public $noOfComments = "noOfComments";
 
 		public function __construct() {
      	}

@@ -75,7 +75,7 @@ var submitAddUser = function() {
 	 		pass: document.getElementsByName("pass")[0].value,
 	 		role: 1
 	 	};
-	 	dataService("POST",JSON.stringify(user), "Services/addUser.php", getAllUsers);
+	 	dataService("POST",JSON.stringify(user), "/Services/userREST.php", getAllUsers);
 	 }
 };
 
@@ -144,7 +144,7 @@ sendEmail = function () {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
            if(xmlhttp.status == 200){
-           		document.getElementById("pagecontent").innerHTML = xmlhttp.responseText;
+           		showFormFromResponse(xmlhttp.response);
            }
            else if(xmlhttp.status == 400) {
            }
@@ -152,7 +152,7 @@ sendEmail = function () {
            }
         }
     }
-    xmlhttp.open("POST","Services/validateContact.php",true);
+    xmlhttp.open("POST","Services/mailREST.php",true);
 	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xmlhttp.send("name="+ name +"&mail="+ mail +"&subject=" + subject + "&message=" + message);
 }
@@ -182,7 +182,7 @@ IAgree = function () {
            }
         }
     }
-    xmlhttp.open("POST","Services/sendEmail.php",true);
+    xmlhttp.open("POST","Services/sendMailREST.php",true);
 	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xmlhttp.send();
 }
@@ -205,7 +205,7 @@ var reload = function(response) {
 }
 
 var getAllNews = function() {
-	dataService("GET", null, "Services/getNews.php", callBackGetAllNews);
+	dataService("GET", null, "Services/newsREST.php", callBackGetAllNews);
 }
 
 var callBackGetAllNews = function(response) {
@@ -228,13 +228,14 @@ var renderHomePage = function (html) {
 		element.getElementsByClassName("news-content")[0].getElementsByTagName("img")[0].src = newses[i].imageUrl;
 		element.getElementsByClassName("news-content")[0].getElementsByTagName("p")[0].innerText = newses[i].text;
 		element.getElementsByClassName("news-date")[0].innerText = newses[i].author + ' u ' + newses[i].time;
-		element.getElementsByClassName("news-more")[0].href = "javascript:clickOnMoreLink(" + i + ")";
+		element.getElementsByClassName("news-more")[0].href = "javascript:clickOnMoreLink(" + newses[i].id + ")";
 	}
 
 }
 
 var clickOnMoreLink = function (id) {
-	readMoreNews = newses[id];
+	window.location.href = "#more"+id;
+	readMoreNews = newses.filter(function (item) { return item.id == id})[0];
 	htmlService("Partial/_more.html", renderMorePage);
 }
 
@@ -245,7 +246,7 @@ var renderMorePage = function (html) {
 	document.getElementById("moreImage").src = readMoreNews.imageUrl;
 	document.getElementById("moreText").innerText = readMoreNews.more;
 	document.getElementById("moredate").innerText = readMoreNews.author + " u " + readMoreNews.time;
-	dataService("GET", null, "Services/getNumberOfComments.php?data=" + readMoreNews.id, showNumberOfComments);
+	dataService("GET", null, "Services/commentREST.php?id=" + readMoreNews.id, showNumberOfComments);
 }
 
 var renderIndex = function (response) {
@@ -265,7 +266,7 @@ var resetAddUserForm = function () {
 
 var getAllUsers = function () {
 	resetAddUserForm();
-	dataService("GET", null, "Services/getUsers.php", fillUsersTableWithData);
+	dataService("GET", null, "/Services/userREST.php", fillUsersTableWithData);
 }
 
 var users = [];
@@ -293,7 +294,7 @@ var fillUsersTableWithData = function (response) {
 }
 
 var deleteUser = function(id) {
-	dataService("DELETE", id ,"Services/deleteUser.php", getAllUsers);
+	dataService("DELETE", id ,"/Services/userREST.php", getAllUsers);
 }
 
 var openUserEditDialog = function (index) {
@@ -314,7 +315,7 @@ var editUser = function() {
 		email: document.getElementById("editPrice").value,
 		role: 1
 	};
-	dataService("PUT", JSON.stringify(user), "/Services/editUser.php", getAllUsers);
+	dataService("PUT", JSON.stringify(user), "/Services/userREST.php", getAllUsers);
 	dialog = document.getElementById("editDialog");
 	dialog.style.visibility = "hidden";
 }
@@ -326,11 +327,11 @@ var addNews = function() {
 	 	text: document.getElementById("text").value,
 	 	more: document.getElementById("moretext").value
 	};
-	dataService("POST", JSON.stringify(news), "Services/addNews.php", getAllNewsAdmin);
+	dataService("POST", JSON.stringify(news), "Services/newsREST.php", getAllNewsAdmin);
 }
 
 var getAllNewsAdmin = function(response) {
-	dataService("GET", null, "Services/getNews.php", fillTableWithNewses);
+	dataService("GET", null, "Services/newsREST.php", fillTableWithNewses);
 }
 
 var fillTableWithNewses = function (response) {
@@ -356,7 +357,7 @@ var fillTableWithNewses = function (response) {
 }
 
 var deleteNews = function(id) {
-	dataService("DELETE", id ,"Services/deleteNews.php", getAllNewsAdmin);
+	dataService("DELETE", id ,"Services/newsREST.php", getAllNewsAdmin);
 }
 
 var openNewsEditDialog = function (index) {
@@ -378,7 +379,7 @@ var editNews = function () {
 	 	text: document.getElementById("editText").value,
 	 	more: document.getElementById("editMoreText").value
 	};
-	dataService("PUT", JSON.stringify(news), "/Services/editNews.php", getAllNewsAdmin);
+	dataService("PUT", JSON.stringify(news), "Services/newsREST.php", getAllNewsAdmin);
 	dialog = document.getElementById("editDialog");
 	dialog.style.visibility = "hidden";
 }
@@ -405,8 +406,8 @@ var showHideComments = function () {
 var comments = [];
 
 var getAllComments = function() {
-	dataService("GET", null, "Services/getNumberOfComments.php?data=" + readMoreNews.id, showNumberOfComments);
-	dataService("GET", null, "Services/getComments.php?data=" + document.getElementById("newsId").value, renderComments);
+	dataService("GET", null, "Services/commentREST.php?id=" + readMoreNews.id, showNumberOfComments);
+	dataService("GET", null, "Services/commentREST.php?data=" + document.getElementById("newsId").value, renderComments);
 }
 
 var renderComments = function (response) {
@@ -416,6 +417,8 @@ var renderComments = function (response) {
 
 var fillWithComments = function (response) {
 	commentsElement = document.getElementById("comments");
+	if(!commentsElement) 
+		return;
 	commentsElement.innerHTML = "";
 	for(var key in comments) {
 		commentsElement.innerHTML += response;
@@ -443,11 +446,11 @@ var addComment = function () {
 		text: document.getElementById("text").value
 	};
 
-	dataService("POST", JSON.stringify(comment), "Services/addComment.php", getAllComments);
+	dataService("POST", JSON.stringify(comment), "Services/commentREST.php", getAllComments);
 }
 
 var getAllNewsHeaders = function () {
-	dataService("GET", null, "Services/getNews.php", callBackPopulateSelect);
+	dataService("GET", null, "Services/newsREST.php", callBackPopulateSelect);
 }
 
 var callBackPopulateSelect = function (response) {
@@ -463,7 +466,7 @@ var callBackPopulateSelect = function (response) {
 
 var onSelectChange = function (event) {
 	id = event.target.selectedOptions[0].id;
-	dataService("GET", null, "Services/getComments.php?data=" + id, fillCommentsTable);
+	dataService("GET", null, "Services/commentREST.php?data=" + id, fillCommentsTable);
 }
 
 var fillCommentsTable = function (response) {
@@ -490,7 +493,7 @@ var fillCommentsTable = function (response) {
 }
 
 var deleteComment = function (id) {
-	dataService("DELETE", id, "Services/deleteComment.php", callBackGetAllComents);
+	dataService("DELETE", id, "Services/commentREST.php", callBackGetAllComents);
 }
 
 var callBackGetAllComents = function (response) {
@@ -500,4 +503,81 @@ var callBackGetAllComents = function (response) {
 		}
 	};
 	onSelectChange(event);
+}
+
+var mail = {};
+
+var showFormFromResponse = function(response) {
+	mail = JSON.parse(response);
+	if(mail.status == "ok") {
+		htmlService("Partial/_confirmMail.html", renderConfirmMail);
+	}
+	else {
+		if(document.getElementsByClassName("readonly")[0] != undefined) {
+			htmlService("Partial/_contact.html", fillContactFormWithData);
+		}
+		else {
+			fillContactFormWithData();
+		}
+	}
+}
+
+var fillContactFormWithData = function(response) {
+	if(response) {
+		document.getElementById("pagecontent").innerHTML = response;
+	}
+	document.getElementById("contactName").value = mail.name;
+	document.getElementById("contactMail").value = mail.mail;
+	document.getElementById("contactSubject").value = mail.subject;
+	document.getElementById("contactMessage").value = mail.message;
+	validateContactForm();
+}
+
+var renderConfirmMail = function (response) {
+	document.getElementById("pagecontent").innerHTML = response;
+	document.getElementsByClassName("readonly")[0].children[0].innerText += mail.name;
+	document.getElementsByClassName("readonly")[0].children[1].innerText += mail.mail;
+	document.getElementsByClassName("readonly")[0].children[2].innerText += mail.subject;
+	document.getElementsByClassName("readonly")[0].children[3].innerText += mail.message;
+	document.getElementById("contactName").value = mail.name;
+	document.getElementById("contactMail").value = mail.mail;
+	document.getElementById("contactSubject").value = mail.subject;
+	document.getElementById("contactMessage").value = mail.message;
+}
+
+var intervalRefreshId;
+
+var stopRefresh = function () {
+	if(intervalRefreshId) {
+		clearInterval(intervalRefreshId);
+	}
+}
+
+var periodiclyRefreshIndex = function () {
+	intervalRefreshId = setInterval(getAllNews, 5000);
+}
+
+
+
+var periodiclyRefreshMore = function() {
+	intervalRefreshId = setInterval(refreshMorePage, 5000);
+}
+
+var refreshMorePage = function () {
+	dataService("GET", null, "Services/newsREST.php", callBackRefreshMorePage);
+}
+
+var callBackRefreshMorePage = function (response) {
+	newses = JSON.parse(response); 
+	if(!newses.filter(function(item){ return item.id == readMoreNews.id })[0]) {
+		stopRefresh();
+		return;	
+	}
+	readMoreNews = newses.filter(function(item){ return item.id == readMoreNews.id })[0];
+	getAllComments();
+ 	document.getElementById("newsId").value = readMoreNews.id;
+	document.getElementById("moreHeader").innerText = readMoreNews.header;
+	document.getElementById("moreImage").src = readMoreNews.imageUrl;
+	document.getElementById("moreText").innerText = readMoreNews.more;
+	document.getElementById("moredate").innerText = readMoreNews.author + " u " + readMoreNews.time;
 }

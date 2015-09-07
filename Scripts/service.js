@@ -18,12 +18,9 @@ var dataService = function(action, data, url, callback) {
         }
     }
     xmlhttp.open(action,url,true);
-    if(action == "POST" || action == "PUT") {
+    if(action != "GET") {
 		xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		xmlhttp.send("data=" + data);
-	}
-	else if(action == "DELETE"){
-		xmlhttp.send("id=" + data);
 	}
 	else {
 		xmlhttp.send();
