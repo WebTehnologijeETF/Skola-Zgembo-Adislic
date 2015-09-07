@@ -1,27 +1,5 @@
 (function () {
-	var ajaxFunctionPartialLoads = function (url) {
-	    var xmlhttp;
-	    if (window.XMLHttpRequest) {
-	        xmlhttp = new XMLHttpRequest();
-	    } else {
-	        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-	    }
-	    xmlhttp.onreadystatechange = function() {
-	        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-	           if(xmlhttp.status == 200){
-	               document.getElementById("pagecontent").innerHTML = xmlhttp.responseText;
-	           }
-	           else if(xmlhttp.status == 400) {
-	           }
-	           else {
-	           }
-	        }
-	    }
-	    xmlhttp.open("GET", url, true);
-	    xmlhttp.send();
-	}
-
-	ajaxFunctionPartialLoads("Partial/_index.html");
+	getNews();
 })();
 
 var ajaxFunctionPartialLoads = function (url) {
@@ -51,7 +29,7 @@ var ajaxFunctionPartialLoads = function (url) {
 var ajaxLoad = function(nameOfPage) {
 	switch(nameOfPage) {
 		case "index":
-			ajaxFunctionPartialLoads("Partial/_index.html");
+			getNews();
 			break;
 		case "timetable1":
 			ajaxFunctionPartialLoads("Partial/_timetableI.html");

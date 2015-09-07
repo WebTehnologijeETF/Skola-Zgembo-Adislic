@@ -1,34 +1,35 @@
 <h2> Kontaktirajte nas </h2>
 <div id="forma">
-<form id="contact-form" method="post" action="contactUs">
+<div class="form">
 	<h4>Popunite formu ispod i mi ćemo odgovoriti u roku od 24 časa</h4>
 
 		<div>
 			<label>
-					<span>Ime: (obavezno)</span>
-					<input placeholder="Ime..." type="text" tabindex="1" name="name" required autofocus>
+					<span>Ime:</span> <span class="error-hidden">ime mora biti duze od dva karaktera</span>
+					<input id="contactName" placeholder="Ime..." type="text" tabindex="1" name="firstName" autofocus onblur="validateName(event)">
 			</label>
 		</div>
 		<div>
 			<label>
-					<span>Email: (obavezno)</span>
-					<input placeholder="Email..." type="email" tabindex="3" name="email" required>
+					<span>Email:</span> <span class="error-hidden">email nije validan</span>
+					<input id="contactMail" placeholder="Email..." type="email" tabindex="3" name="email" onblur="validateEmail()">
 			</label>
 		</div>
 		<div>
 			<label>
-					<span>Naslov: (obavezno)</span>
-					<input placeholder="Naslov..." type="text" tabindex="4" name="title" required>
+					<span>Naslov:</span> <span class="error-hidden">naslov nije validan</span>
+					<input id="contactSubject" placeholder="Naslov..." type="text" tabindex="4" name="title" onblur="validateSubject()">
 			</label>
 		</div>
 		<div>
 			<label>
-					<span>Poruka:</span>
-					<textarea tabindex="5" required></textarea>
+					<span>Poruka:</span> <span class="error-hidden">poruka nije validna</span>
+					<textarea id="contactMessage" tabindex="5" onblur="validateMessage()"></textarea>
 			</label>
 		</div>
 		<div>
-		<button name="submit" type="submit" id="contact-submit">Pošaljite email</button>
+		<button class="cancelEmail" name="cancel" id="contact-cancel" onclick="cancelSendEmail()">Odustani</button>
+		<button class="sendEmail" name="submit" id="contact-submit" onclick="sendEmail()">Pošaljite email</button>
 		</div>
-	</form>
+	</div>
 </div>

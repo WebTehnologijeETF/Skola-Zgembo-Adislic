@@ -240,11 +240,7 @@ tbody > tr:hover td{
 	border-radius: 5px;
 }
 
-#pagecontent > form {
-	
-}
-
-#pagecontent > div >form > h4 {
+#pagecontent > div > .form > h4 {
 	padding-top: 20px;
 	text-align: center;
 	font-size: 15pt;
@@ -261,7 +257,9 @@ tbody > tr:hover td{
 	border: none;
 	padding-left: 5px;
 }
-#pagecontent button {
+
+#pagecontent  button,
+.sendEmail {
 	width: 580px;
 	height: 30px;
 	border-radius: 5px;
@@ -270,6 +268,16 @@ tbody > tr:hover td{
 	font-weight: bold;
 	font-size: 14pt;
 	margin-bottom: 10px;
+}
+
+.sendEmail {
+	width: 200px !important;
+}
+
+.cancelEmail { 
+	background-color:  #888888 !important; 	
+	margin-left: 176px; 
+	width: 200px !important;
 }
 
 #pagecontent textarea {
@@ -693,3 +701,54 @@ ul  {
 }
 
 /*#endregion books*/
+
+.form.readonly {
+	margin: 0 auto;
+}
+
+.form.readonly > div {
+	margin-bottom: 10px;
+	text-align: center;
+	font-family:'Jura', sans-serif !important;
+	font-size: 13pt;
+	word-wrap: break-word;
+}
+
+.form.readonly:first-child {
+	padding-top: 10px;
+}
+
+.form.readonly:last-child {
+	padding-bottom: 10px;
+}
+
+.formCheckAndCorrect > div {
+	text-align: left;
+}
+
+/*#region readmore*/
+#moreImage {
+	float: right;
+	border-radius: 110px;
+	width: 500px;
+	height: 312px;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+#moreImage:hover {
+	box-shadow: 10px 10px 5px #89C13C;
+}
+
+#moreText {
+	font-family:'Jura', sans-serif !important;
+	font-size: 13pt;
+}
+
+#moredate {
+	color: #9d9d9d;
+	font-style: italic;
+	font-size: 12px;
+	margin-top: 20px;
+}
+
+/*#endregion readmore*/
