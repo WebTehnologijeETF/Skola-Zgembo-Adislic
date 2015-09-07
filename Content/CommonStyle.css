@@ -751,4 +751,98 @@ ul  {
 	margin-top: 20px;
 }
 
+.signin {
+	width: 150;
+	font-family:'Jura', sans-serif !important;
+	font-size: 13pt;
+}
+
+#editText, #editMoreText {
+	width: 545px !important;
+}
+
+.editNewsDialog {
+	height: 600px !important;
+}
 /*#endregion readmore*/
+
+#commentNumber {
+	width: 100%;
+    overflow-x: auto;
+}
+
+.arrowRight {
+	background: url(arrowright.png) no-repeat 0 0;
+	background-size: 30px 25px;
+    height: 30px;
+    cursor:pointer;
+}
+
+.arrowDown {
+	background: url(arrowdown.png) no-repeat 0 0;
+	background-size: 25px 30px;
+    height: 30px;
+    cursor:pointer;
+}
+
+
+#commentNumberText {
+	margin-left: 40px;
+	font-family:'Jura', sans-serif !important;
+	font-size: 13pt;
+	font-style: italic;
+	vertical-align: sub;
+}
+
+#commentSection {
+	visibility: hidden;
+	margin-top: 15px;
+}
+
+#comments {
+	margin-top: 50px;
+}
+
+#comments > div {
+	border-bottom: 2px solid #89C13C;
+	background-color: #F8F6F6;
+	margin-top: 10px;
+}
+
+.name {
+	float: left;
+}
+
+#comments > div div, #comments > div a {
+	padding-left: 10px;
+	font-family:'Jura', sans-serif !important;
+	font-size: 13pt;
+}
+
+.moredate {
+	font-size: 10pt !important;
+	font-style: italic;
+	margin-top: 15px;
+}
+
+.commentText {
+	margin-top: 10px;
+}
+.email {
+	text-decoration: underline;
+}
+
+.commentsAdmin {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.commentsAdmin select {
+	width: 530px;
+	border: none;
+	border-radius: 5px;
+}
+
+#booksTable {
+	margin-top: 15px;
+}

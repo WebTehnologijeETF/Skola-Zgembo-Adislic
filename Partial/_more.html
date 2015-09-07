@@ -1,4 +1,37 @@
+<input id="newsId" hidden>
 <h2 id="moreHeader"> </h2>
 <img id="moreImage" src="#" alt="1"> </img>
 <p id="moreText"></p>
 <div id="moredate"> </div>
+<div id="commentNumber">
+	<div class="arrowRight" onclick="showHideComments()"> <span id="commentNumberText"> </span></div>
+ <div>
+<div id="commentSection">
+	<div id="forma">
+		<div id="adduserform" class="form">
+			<div>
+				<label>
+						<span>Ime:</span>
+						<input placeholder="Ime..." type="text" id="name">
+				</label>
+			</div>
+			<div>
+				<label>
+						<span>mail:</span> 
+						<input placeholder="Email..." type="email" id="mail">
+				</label>
+			</div>
+			<div>
+				<label>
+						<span>Text:</span>
+						<textarea id="text"></textarea>
+				</label>
+			</div>
+			<div>
+				<button name="submit" id="adduser-submit" onclick="addComment()">Komentarisi</button>
+			</div>
+		</div>
+	</div>
+	<div id="comments">
+	</div>
+</div>

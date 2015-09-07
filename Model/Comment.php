@@ -1,12 +1,11 @@
 <?php
-	class News {
+	class Comment {
 		public $id = "id";
-		public $header = "header";
+		public $newsid = "newsid";
 		public $text = "text";
-		public $imageUrl = "imageUrl";
+		public $email = "email";
+		public $visitor = "visitor";
 		public $time = "time";
-		public $author = "author";
-		public $more = "more";
 
 		public function __construct() {
      	}

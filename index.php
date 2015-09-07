@@ -1,3 +1,12 @@
+<?php
+
+	include 'Model/User.php';
+	session_start();
+	if(isset($_SESSION["user"]) == true) {
+		$user = new User();
+		$user->set($_SESSION["user"]);
+	}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -14,7 +23,14 @@
 			<label class="logo">Srednja škola <span> Zgembo Adislić</span> </label>
 			<div id="settings-menu">
 				<ul>
-					<li><a href="#">Profil</a></li>
+					<?php
+						if(isset($_SESSION["user"]) == true) {
+							
+							print '<li><a href="#">' . $user->firstName . '</a></li>';
+						}
+						else 
+							print '<li><a href="#">Profil</a></li>';
+					?>
 					<li class="has-sub"><a href="#">Podesavanja</a>
 						<ul class="sub-settings-menu">
 							<li class="sub">
@@ -26,7 +42,12 @@
 						</ul>
 					</li>
 					<li><a href="#">Pomoc</a></li>
-					<li><a href="#">Odjava</a></li>
+					<?php
+						if(isset($_SESSION["user"]) == true) 
+							print '<li onclick="logout()"><a href="#">Odjava</a></li>';
+						else 
+							print '<li onclick="ajaxLoad(' . "'login'" .')"><a href="#">Prijava</a></li>';
+					?>
 				</ul>
 			</div>
 			<div id="settings">
@@ -54,9 +75,16 @@
 			   <li><a onclick="ajaxLoad('partners')"><span>Partneri</span></a></li>
 			   <li><a onclick="ajaxLoad('aboutus')"><span>O Nama</span></a></li>
 			   <li><a onclick="ajaxLoad('contact')"><span>Kontakt</span></a></li>
-			   <li><a onclick="ajaxLoad('adduser')"><span>Dodaj korisnika</span></a></li>
 			   <li><a onclick="ajaxLoad('quiz')"><span>Igra gradovi</span></a></li>
 			   <li><a onclick="ajaxLoad('books')"><span>Knjige</span></a></li>
+			   <?php 
+			   		if(isset($_SESSION["user"]) == true) {
+			   			if($user->role == 1) 
+			   			print '<li><a onclick="ajaxLoad(' . "'adduser'" .')"><span>Korisnici</span></a></li>';
+			   			print '<li><a onclick="ajaxLoad(' . "'novosti'" .')"><span>Novosti</span></a></li>';
+			   			print '<li><a onclick="ajaxLoad(' . "'comments'" .')"><span>Komentari</span></a></li>';
+			   		}
+			   ?>
 			</ul>
 		</div>
 		<div id="pagecontent">
@@ -69,6 +97,7 @@
 	
 	<script type="text/javascript" src="Scripts/book.js"></script>
 	<script type="text/javascript" src="Scripts/quiz.js"></script>
+	<script type="text/javascript" src="Scripts/service.js"></script>
 	<script type="text/javascript" src="Scripts/singlePageScript.js"></script>
 	<script type="text/javascript" src="Scripts/dropDownScript.js"></script>
 </body>

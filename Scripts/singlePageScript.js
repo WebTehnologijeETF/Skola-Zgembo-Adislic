@@ -1,5 +1,5 @@
 (function () {
-	getNews();
+	getAllNews();
 })();
 
 var ajaxFunctionPartialLoads = function (url) {
@@ -29,7 +29,7 @@ var ajaxFunctionPartialLoads = function (url) {
 var ajaxLoad = function(nameOfPage) {
 	switch(nameOfPage) {
 		case "index":
-			getNews();
+			getAllNews();
 			break;
 		case "timetable1":
 			ajaxFunctionPartialLoads("Partial/_timetableI.html");
@@ -54,6 +54,7 @@ var ajaxLoad = function(nameOfPage) {
 			break;
 		case "adduser":
 			ajaxFunctionPartialLoads("Partial/_adduser.html");
+			getAllUsers();
 			break;
 		case "quiz":
 			ajaxFunctionPartialLoads("Partial/_quiz.html");
@@ -62,6 +63,17 @@ var ajaxLoad = function(nameOfPage) {
 		case "books": 
 			ajaxFunctionPartialLoads("Partial/_books.html");
 			getAllBooks();
+			break;
+		case "login":
+			ajaxFunctionPartialLoads("Partial/_login.html");
+			break;
+		case "novosti":
+			ajaxFunctionPartialLoads("Partial/_news.html");
+			getAllNewsAdmin();
+			break;
+		case "comments": 
+			ajaxFunctionPartialLoads("Partial/_commentsAdmin.html");
+			getAllNewsHeaders();
 			break;
 	}
 } 

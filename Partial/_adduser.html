@@ -1,4 +1,4 @@
-<h2> Kontaktirajte nas </h2>
+<h2> Korisnici</h2>
 <div id="forma">
 <div id="adduserform" class="form">
 	<h4>Popunite podatke o korisniku</h4>
@@ -34,7 +34,49 @@
 			</label>
 		</div>
 		<div>
-		<button name="submit" type="button" id="adduser-submit" onclick="return submitAddUser()">Pošaljite poruku</button>
+		<button name="submit" id="adduser-submit" onclick="submitAddUser()">Dodajte korisnika</button>
 		</div>
 	</div>
+</div>
+
+<table id="booksTable">
+<thead>
+	<tr>
+		<th class="topleft"> Ime </th>
+		<th> Prezime </th>
+		<th> Email </th>
+		<th> Uloga </th>
+		<th> Akcija </th>
+	</tr>
+</thead>
+<tbody id="booksTableTbody">
+
+</tbody>
+
+<div id="editDialog">
+	<div>
+		<div>
+		  <input type="text" id="userId" hidden>
+		  <span class="editLabel">
+		  	Ime: 
+		  </span>
+		  <input id="editTitle" placeholder="Ime..." type="text">
+	    </div>
+	    <div>
+		  <span class="editLabel">
+		  	Prezime: 
+		  </span>
+		  <input id="editDescription" placeholder="Prezime..." type="text" >
+	    </div>
+	    <div>
+		  <span class="editLabel">
+		  	Email: 
+		  </span>
+		  <input id="editPrice" placeholder="Email..." type="text">
+	    </div>
+	    <div>
+	    	<input class="editdBookButton" type="button" value="Izmjeni" onclick="editUser()">
+	    	<input class="cancelEditdBookButton" type="button" value="Odustani" onclick="cancelEditDialog()">
+		</div>
+    </div>
 </div>
